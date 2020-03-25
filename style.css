@@ -119,6 +119,7 @@ section{
  margin: 0;
  }
 
+
 label {
 display: block;
 width: 260px;
@@ -196,3 +197,33 @@ section img{
 .tytul a:hover { 
       background: rgba(35, 71, 231, 0.75); 
       }
+ .panel_uzytkownika{
+   width: 400px; 
+   height: 100px;
+   margin: 0 auto; 
+   padding: 15px 0 0;
+   background: #fff;
+   border: 1px solid silver;
+   font: 16px calibri;
+   letter-spacing: -1px;
+   -webkit-box-shadow: 0 0 2px silver; 
+   -moz-box-shadow: 0 0 2px silver; 
+   box-shadow: 0 0 2px silver;
+ }
+      
+.panel_uzytkownika a{
+   color: white; 
+   font-weight: 300; 
+   background: rgb(6, 95, 73); 
+   display: block; 
+   width: 100%; 
+   text-align: center; 
+   height: 30px;
+   width: 100%;
+   margin: 0 auto; 
+   padding: 15px 0 0;
+}
+
+.panel_uzytkownika a:hover { 
+   background: rgba(11, 200, 233, 0.75); 
+   }
