@@ -99,8 +99,6 @@ section{
  border: 1px solid silver;
  font: 16px calibri;
  letter-spacing: -1px;
- -webkit-box-shadow: 0 0 2px silver; 
- -moz-box-shadow: 0 0 2px silver; 
  box-shadow: 0 0 2px silver;
  }
  #panel2 {
@@ -111,8 +109,6 @@ section{
    border: 1px solid silver;
    font: 16px calibri;
    letter-spacing: -1px;
-   -webkit-box-shadow: 0 0 2px silver; 
-   -moz-box-shadow: 0 0 2px silver; 
    box-shadow: 0 0 2px silver;
    }
  form {
@@ -173,8 +169,6 @@ position: relative;
 left: 180px;
 }
 #panel, input[type="submit"] {
-    -webkit-border-radius: 5px; 
-    -moz-border-radius: 5px; 
     border-radius: 5px; 
 }
 section img{
@@ -205,9 +199,7 @@ section img{
    background: #fff;
    border: 1px solid silver;
    font: 16px calibri;
-   letter-spacing: -1px;
-   -webkit-box-shadow: 0 0 2px silver; 
-   -moz-box-shadow: 0 0 2px silver; 
+   letter-spacing: -1px; 
    box-shadow: 0 0 2px silver;
  }
       
