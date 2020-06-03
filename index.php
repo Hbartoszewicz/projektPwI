@@ -15,24 +15,27 @@
     </header>
     <nav class="container"> 
         <ul>
-          <li><a href="index.php">Strona główna</a></li>
-          <li><a href="02.php">Artykuły</a></li>
-          <li><a href="03.html">O Stronie</a></li>
-          <li><a href="04.php">Logowanie</a></li>
+            <li><a href="index.php">Strona główna</a></li>
+            <li><a href="02.php">Artykuły</a></li>
+            <li><a href="03.html">O Stronie</a></li>
+            <li><a href="04.php">Logowanie</a></li>
             </ul>
     </nav>
     <section>
     <article>
-        <h3>Dodaj artykuł</h3>
-        <form action="dodaj.php" method="POST">
-        <label for="tytul">Tytuł:</label>
-        <input type="text" id="tytul" name="tytul">
-        <p>
-          <textarea  id="tresc" name="tresc"></textarea>
-        </p>
-        <button>Dodaj</button>
-      </form>
-
+        <h2>Najnowszy artykuł</h2>
+        <form  method="POST">
+          <?php
+      $conn = new PDO('mysql:host=userdb1;dbname=1197303_QeK','1197303_QeK', 'OERRbPcBG2qtTr');
+      $stmt = "SELECT tytul, tresc FROM artykul";  
+          foreach ($conn->query($stmt) as $row) {
+              print
+               $row['tytul'] . "<br>"
+               .$row['tresc'] . "<br><br>";
+          break;
+          }
+          ?>
+        </div>
     </article>
     <aside>
       <p>Aktualna godzina </p><div id="zegar"></div>  

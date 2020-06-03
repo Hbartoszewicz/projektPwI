@@ -124,7 +124,7 @@ color: #696969;
 font-size: 16px;
 text-shadow: 0 0 1px silver;
 }
-#username, #password, #email {
+#username, #password, #password2, #email {
 display: block;
 width: 360px; 
 margin: 0 auto;
@@ -199,7 +199,7 @@ section img{
    background: #fff;
    border: 1px solid silver;
    font: 16px calibri;
-   letter-spacing: -1px; 
+   letter-spacing: -1px;
    box-shadow: 0 0 2px silver;
  }
       

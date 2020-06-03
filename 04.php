@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="pl-PL">
+  <head >
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <title>Blog</title>
+    <?php
+       session_start();
+    if($_SESSION["loggedin"] == true){
+        header("location: Panel.php");
+    }
+    ?>
   </head>
   <body>
-<div>
     <header>
         <h1>Blog o zwięrzetach</h1>
     </header>
@@ -18,33 +23,29 @@
             <li><a href="04.php">Logowanie</a></li>
             </ul>
     </nav>
-    <section>
+   <section>
     <article>
-        <div id="panel2" >
-            <form action="rejestracja.php" method="POST">
+        <h2>Zaloguj się</h2>
+        <div id="panel">
+            <form action="login.php" method="POST">
                 <label for="username">Nazwa użytkownika:</label>
                 <input type="text" id="username" name="username">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
+
                 <label for="password">Hasło:</label>
                 <input type="password" id="password" name="password">
-                <label for="password2">Potwierdź hasło:</label>
-                <input type="password" id="password2" name="password2">
+
                 <div id="lower">
-                    <input id="submit2" type="submit" value="Zarejestruj się">
+                    <input id="ckb" type="checkbox"><label class="check" for="ckb">Zapamiętaj mnie!</label>
+                    <input id="submit1" type="submit" value="Zaloguj">
                 </div>
-                <p><a href="04.html">Masz konto? Zaloguj się</a></p>
+
+                <p><a href="05.html">Nie masz konta? Zarejestruj się</a></p>
 
             </form>
         </div>
     </article>
     <aside>
-        <p>Porady dotyczące tworzenia hasła:</p>
-        <ul>
-            <li>Hasło powinno składać się z conajmniej 1 wielkiej litery,małej litery,cyfry i znaku specjalnego</li>
-            <li>Hasło powinno składać z co najmniej 8 znaków</li>
-        </ul>
-
+        <p>Pamietaj aby nikomu nie podawać swoich danych logowania</p>
     </aside>
   </section>
     <footer id="stopka">
