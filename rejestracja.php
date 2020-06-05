@@ -12,21 +12,27 @@ $warunek = true;
 
 if($_POST["username"] == NULL or $_POST["email"] == null or $_POST["password"] == null)
 {
-    echo  "Nie wypełniono wszystkich pól <br> <a href=\"05.html\">Powrót</a>";
+    echo  "Nie wypelniono wszystkich pol <br> <a href=\"05.html\">Powrot</a>";
     $warunek = false;
 
 }
 else if($_POST["password"] != $_POST["password2"] and $warunek ){ 
-    echo  "Hasła są różne <br> <a href=\"05.html\">Powrót</a>";
+    echo  "Hasla sa rozne <br> <a href=\"05.html\">Powrot</a>";
     $warunek = false;
  }
+
+if(strlen($_POST["password"]) < 8 and $warunek ){
+    echo "Haslo jest za krotkie <br> <a href=\"05.html\">Powrot</a>";
+    $warunek = false;
+}
+
 $sql1 = "SELECT nazwa_uzytkownika FROM uzytkownicy WHERE nazwa_uzytkownika = :username";
  if($stmt = $conn->prepare($sql1) and $warunek){
     $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
     $param_username = trim($_POST["username"]);
     if($stmt->execute()){
         if($stmt->rowCount() == 1){
-        echo  "Nazwa użytkownia jest zajęta <br> <a href=\"05.html\">Powrót</a>";
+        echo  "Nazwa uzytkownia jest zajeta <br> <a href=\"05.html\">Powrot</a>";
     $warunek = false;
     }
 }
@@ -37,7 +43,7 @@ if($stmt2 = $conn->prepare($sql2) and $warunek){
     $param_email = trim($_POST["email"]);
     if($stmt2->execute()){
         if($stmt2->rowCount() == 1){
-    echo  "Email jest zajęty <br> <a href=\"05.html\">Powrót</a>";
+    echo  "Email jest zajety <br> <a href=\"05.html\">Powrot</a>";
     $warunek = false;
     }
 }
@@ -48,7 +54,7 @@ $stmt3->bindValue(1, $_POST["username"], PDO::PARAM_STR);
 $stmt3->bindValue(2, $_POST["email"], PDO::PARAM_STR);
 $stmt3->bindValue(3, $_POST["password"], PDO::PARAM_STR);
 $stmt3->execute();
-echo "Konto zostało utworzone!<br> <a href=\"04.html\">Zaloguj się</a>";
+echo "Konto zostalo utworzone!<br> <a href=\"04.php\">Zaloguj sie</a>";
 
 
 }

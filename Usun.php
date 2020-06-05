@@ -13,5 +13,5 @@
         $stmt->execute();
         $conn -> exec("SET FOREIGN_KEY_CHECKS=ON");
 
-        echo "Usunięto <br> <a href=\"07.php\">Powrót</a>"
+        echo "Usunieto <br> <a href=\"07.php\">Powrot</a>"
         ?>

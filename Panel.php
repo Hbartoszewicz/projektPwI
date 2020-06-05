@@ -6,6 +6,12 @@
     <title>Blog</title>
     <script src="zegar.js"></script>
     <script  src="kalendarz.js"></script>
+    <?php
+       session_start();
+    if($_SESSION["loggedin"] == false){
+        header("location:04.php");
+    }
+    ?>
   </head>
   <body onload="odliczanie(); dzien()">
     <header>
@@ -23,8 +29,8 @@
     <article>
         <h2>Panel użytkownika</h2>
         <div class="panel_uzytkownika">
-        <a href="06.html">Dodawanie artykułów</a>
-        <a href="07.php">Usuwanie artykułów</a>
+        <a href="06.php">Dodawanie artykułów</a>
+        <a href="07.php">Usuwanie/Edytowanie artykułów</a>
       
         </div>
     </article>

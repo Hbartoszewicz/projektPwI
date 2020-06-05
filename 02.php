@@ -34,12 +34,11 @@
             print
              $row['tytul'] . "<br>"
              .$row['tresc'] . "<br><br>"
-             ."Komentarze: "."<br>";
+             ."Komentarze: "."<br><br>";
              foreach ($conn->query($stmt2) as $row2) {
-               if($row2['id'] == $row['id']){
-                
+               if($row2['id'] == $row['id']){               
                print   
-               $row2['kom'] . "<br>";
+               $row2['kom'] . "<br><br>";
                }
              }
              print "<br>";
@@ -50,7 +49,7 @@
     </article>
     <aside>
     <form action="dodajkom.php"  method="POST">
-      <textarea id='kom' name='kom'></textarea><br>
+      <textarea id='kom' name='kom' rows="4" cols="50"></textarea><br>
       <p>Wybór artykułu</p>
     <select name="artykul" id="atykul"><br>
         <?php

@@ -12,7 +12,7 @@ session_start();
 $username = $password = "";
 
 if($_POST["username"] == NULL  | $_POST["password"] == null){
-    echo  "Nie wypełniono wszystkich pól <br> <a href=\"04.html\">Powrót</a>";
+    echo  "Nie wypelniono wszystkich pol <br> <a href=\"04.php\">Powrot</a>";
 
 }
 else{
@@ -35,20 +35,17 @@ if($stmt->execute()){
                 header("location: Panel.php");
                 }
                 else{
-                    echo  "Złe hasło <br> <a href=\"04.html\">Powrót</a>";
+                    echo  "Zle hasło <br> <a href=\"04.php\">Powrot</a>";
                 }
             }
             else{
-                echo  "Nie ma takiego użytkownika <br> <a href=\"04.html\">Powrót</a>";
+                echo  "Nie ma takiego uzytkownika <br> <a href=\"04.php\">Powrot</a>";
             }
         }if($stmt->rowCount() == 0){
-             echo  "Nie ma takiego użytkownika <br> <a href=\"04.html\">Powrót</a>";
+             echo  "Nie ma takiego uzytkownika <br> <a href=\"04.php\">Powrot</a>";
         }
     }
-    unset($stmt);
     }
 }
-
-    unset($conn);
 
 ?>

@@ -6,7 +6,12 @@
     <title>Blog</title>
     <script  src="zegar.js"></script>
     <script  src="kalendarz.js"></script>
-
+    <?php
+       session_start();
+    if($_SESSION["loggedin"] == false){
+        header("location:04.php");
+    }
+    ?>
 
   </head>
   <body onload="odliczanie(); dzien()">
@@ -38,13 +43,33 @@
              print
              "<option value = '$row[id]' >"
               .$row['tytul']."</option>";
-         }       
-        
-                  
+         }                     
               ?>
               </select>
               <button type="submit">Usuń</button>
+        </form>
+
+              <h3>Edytuj artykuł</h3>
+              <form action="edytuj.php"  method="POST">
+              <textarea id='tresc' name='tresc' rows="4" cols="50"></textarea><br>
+          <select name="artykul2" id="artykul2">
+              <?php
+      $conn = new PDO('mysql:host=userdb1;dbname=1197303_QeK','1197303_QeK', 'OERRbPcBG2qtTr');
+      session_start();
+      $stmt = "SELECT id, tytul, user_id FROM artykul where user_id = :userid";
+      $stmt = $conn->prepare($stmt);
+      $stmt->bindParam(":userid", $_SESSION['id'], PDO::PARAM_INT);
+      $stmt ->execute();
+          foreach ($stmt as $row) {
+             print
+             "<option value = '$row[id]' >"
+              .$row['tytul']."</option>";
+         }              
+              ?>
+              </select>
+              <button type="submit">Edytuj</button>
             </form>
+
 
     </article>
     <aside>
