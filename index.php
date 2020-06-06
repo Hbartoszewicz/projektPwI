@@ -34,7 +34,7 @@
          .$row['tresc'];    
     }  
           ?>
-        </div>
+          </form>
     </article>
     <aside>
       <p>Aktualna godzina </p><div id="zegar"></div>  
