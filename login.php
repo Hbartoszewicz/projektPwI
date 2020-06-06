@@ -25,8 +25,8 @@ if($stmt->execute()){
         if($row = $stmt->fetch()){
             $id = $row["id"];
             $username = $row["nazwa_uzytkownika"];
-            $hashed_password = $row["haslo_hash"];
-            if($_POST["password"] == $hashed_password){
+            $haslo_hash = $row["haslo_hash"];
+            if(password_verify($_POST["password"],$haslo_hash)){
                 session_start();
                 $_SESSION["loggedin"] = true;
                 $_SESSION["id"] = $id;
