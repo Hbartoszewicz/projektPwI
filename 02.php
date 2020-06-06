@@ -51,7 +51,7 @@
     <form action="dodajkom.php"  method="POST">
       <textarea id='kom' name='kom' rows="4" cols="50"></textarea><br>
       <p>Wybór artykułu</p>
-    <select name="artykul" id="atykul"><br>
+    <select name="artykul" id="atykul">
         <?php
           $conn = new PDO('mysql:host=userdb1;dbname=1197303_QeK','1197303_QeK', 'OERRbPcBG2qtTr');
           $stmt = "SELECT id , tytul,tresc FROM  artykul";    
