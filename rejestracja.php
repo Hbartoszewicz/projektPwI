@@ -52,7 +52,8 @@ if($stmt2 = $conn->prepare($sql2) and $warunek){
 $stmt3=$conn->prepare("INSERT INTO uzytkownicy (nazwa_uzytkownika, email, haslo_hash) VALUES (?, ?, ?)");
 $stmt3->bindValue(1, $_POST["username"], PDO::PARAM_STR);
 $stmt3->bindValue(2, $_POST["email"], PDO::PARAM_STR);
-$stmt3->bindValue(3, $_POST["password"], PDO::PARAM_STR);
+$haslo_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+$stmt3->bindValue(3,$haslo_hash, PDO::PARAM_STR);
 $stmt3->execute();
 echo "Konto zostalo utworzone!<br> <a href=\"04.php\">Zaloguj sie</a>";
 
